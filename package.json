@@ -5,6 +5,11 @@
   "repository": "https://github.com/tnstjd120/kp-design-system.git",
   "author": "tnstjd120 <tnstjd120@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "npx webpack serve --config config/webpack.dev.ts",
+    "build:dev": "npx webpack --config config/webpack.dev.ts",
+    "build:prod": "npx webpack --config config/webpack.prod.ts"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
