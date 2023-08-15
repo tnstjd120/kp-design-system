@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist", // 컴파일러가 컴파일된 javascript 파일을 배치하는 위치를 지정. => 컴파일된 파일을 ./dist 경로에 저장
+    "target": "ES5", // 컴파일러가 코드들을 지정한 버전으로 변환. => ES5 Javascript 구문으로 변환
+    "module": "ESNext", // 사용하려는 모듈 시스템을 정함. => ES6 스타일 모듈 구문을 사용함.
+    "jsx": "react-jsx", // JSX 구문을 처리하는 방법을 typescript에 알려줌. => react-jsx로 설정 시 React 17 부터 도입된 새로운 JSX Transform을 사용하게된다. 이 때문에 jsx 구문을 사용하는 파일 맨 위에 "import React from 'react'"를 불러오지 않아도 jsx문법을 사용할 수 있다.
+    "noImplicitAny": true, // true로 설정 시 typescript가 유추할 수 없는 모든 변수가 컴파일 오류를 발생 시킴.
+    "allowSyntheticDefaultImports": true, //
+    "lib": ["dom", "dom.Iterable", "esnext"], //
+    "allowJs": true, // true로 설정 시 컴파일에 javascript 파일을 포함시킬 수 있음.
+    "skipLibCheck": true, // true로 설정 시 모든 선언 파일(.d.ts)에 대한 타입 검사를 건너 뜀.
+    "esModuleInterop": true, // true로 설정 시 ES6 모듈 가져오기/내보내기의 상호 운용성을 활성화하여 모든 가져오기에 대한 네임스페이스 개체를 생성.
+    "strict": true, // 타입 검사를 더 강력하게 시킴.
+    "forceConsistentCasingInFileNames": true, // 대소문자를 구분하는 파일 시스템에서 문제를 방지하기위해 파일이 동일한 대소문자로 일관되게 참조되도록 함.
+    "moduleResolution": "node", //
+    "resolveJsonModule": true, // json 모듈을 가져올 수 있게 함.
+    "isolatedModules": true, //
+
+    // 절대 경로 설정
+    "baseUrl": ".", // paths의 base가 되는 url경로
+    "paths": {
+      // 절대 경로를 설정하기 위해 선언
+      "@src/*": ["src/*"] // ex) ../../../components/button -> @src/components/button
+    }
+  },
+  "include": ["src"], // 컴파일에 포함할 파일 및 폴더를 지정하는 glob 패턴의 배열. => src 폴더 안에 있는 파일만 컴파일에 포함 됌.
+  "exclude": ["node_modules", "dist"], // 컴파일에서 제외할 파일 또는 폴더를 지정하는 glob 패턴의 배열. => node_modules, dist 폴더 내에 파일들을 컴파일 하는 것을 제외
+
+  // webpack 설정 파일들을 typescript로 처리하기 위해 사용
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
