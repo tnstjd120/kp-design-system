@@ -3,7 +3,7 @@ const presets = [
   [
     "@babel/preset-env", // 브라우저의 버전과 node.js의 버전 등에 대해 호환성을 생각하지 않고 최신 javascript의 기능들을 사용할 수 있음.
     {
-      modules: false, // ES6 모듈을 CommonJS 모듈 방식으로 변환하지 말라고 설정. => ES6 모듈을 사용하여 'Tree Shaking' 하기 위함.
+      modules: false, // 컴파일할 모듈 시스템을 결정. => false로 설정하면 모듈이 변환되지 않아서 ES6 모듈을 사용함.
       useBuiltIns: "usage", // 코드에서 실제로 사용하고 있는 pollyfill만 포함하도록 처리(babel 자동감지 처리).
       corejs: 3, // 사용중인 core-js의 버전을 지정. => 위의 useBuiltIns를 제대로 작동하게 하기 위해서 사용.
     },
