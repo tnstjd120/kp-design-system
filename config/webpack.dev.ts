@@ -32,7 +32,7 @@ const configuration: webpack.Configuration = {
     hot: true, // HMR을 활성화 시켜 코드 변경 시 전체 페이지 새로고침 없이 해당 모듈만 반영 시킴. => RefreshWebpackPlugin이 없으면 react에서 state나 props를 일반 HMR로는 빠른 대응이 불가능 해서 RefreshWebpackPlugin를 플러그인에 포함시켜 react에 특화된 HMR을 제공
   },
   watchOptions: {
-    ignored: /node_moduels/, // 변경된 부분을 감지하는 파일 목록 중 node_moduels의 변경은 감지 옵션에서 제외 시킴.
+    ignored: /node_modules/, // 변경된 부분을 감지하는 파일 목록 중 node_moduels의 변경은 감지 옵션에서 제외 시킴.
   },
 };
 

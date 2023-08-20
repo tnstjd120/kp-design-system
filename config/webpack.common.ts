@@ -16,7 +16,7 @@ const configuration: webpack.Configuration = {
       {
         test: /\.(ts|tsx|js|jsx)$/, // 규칙을 적용시킬 확장자들을 선언. => ts,tsx,js,jsx 지정
         use: ["babel-loader"], // 사용할 트랜스파일러를 지정. => 위의 test에서 지정된 확장자들을 babel을 사용해서 트랜스파일 처리.
-        exclude: /node_moduels/, // 제외할 디렉토리 지정. => babel이 node_modules를 트랜스파일 처리 하지 않게 제외 시킴.
+        exclude: /node_modules/, // 제외할 디렉토리 지정. => babel이 node_modules를 트랜스파일 처리 하지 않게 제외 시킴.
       },
     ],
   },
